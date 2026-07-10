@@ -4,7 +4,7 @@ projects in JD lab at JHU
 
 ~ Normal vs Cancer genomic differences summary plots
 
-Tissues: \n
+Tissues: \
 Bladder, Endometrium and Oral
 
 subplots:

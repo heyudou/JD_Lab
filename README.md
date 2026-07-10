@@ -9,7 +9,7 @@ Bladder, Endometrium and Oral
 
 Subplots:
 1. Fraction of genome altered.
-2. RNA expression level
+2. RNA expression levels
 3. Certain driver gene mutation frequency
 4. \# of driver genes
 

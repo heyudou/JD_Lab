@@ -2,16 +2,16 @@
 projects in JD lab at JHU
 
 
-# Normal vs Cancer genomic differences summary plots
+## Normal vs Cancer genomic differences summary plots
 
-Tissues: 
+Tissues: \n
 Bladder, Endometrium and Oral
 
 subplots:
 1. Fraction of genome altered.
 2. RNA expression level
 3. Certain driver gene mutation frequency
-4. # of driver genes
+4. \# of driver genes
 
 
 

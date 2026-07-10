@@ -14,8 +14,8 @@ Subplots:
 4. \# of driver genes
 
 
-[View Documentation](Normal_vs_Cancer/FGA_plots
-/Endometrium_Bladder_Oral_FGA_stacked_bar.pdf)
+[FGA Figure](Normal_vs_Cancer/FGA_plots/Endometrium_Bladder_Oral_FGA_stacked_bar.pdf)
+
 
 
 

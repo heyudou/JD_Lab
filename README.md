@@ -31,7 +31,7 @@ cBioportal FGA calculation approach, threshold of 0.2: \
 [Nikolaus Schultz, 2020, threshold = 0.1](https://groups.google.com/g/cbioportal/c/SqtGhn-AZ4s?utm_source=chatgpt.com)\
 [Robert Sheridan, 2019, threshold = 0.2](https://groups.google.com/g/cbioportal/c/oWO1LFXGHHs?utm_source=chatgpt.com)\
 [JJ Gao, 2018. threshold = 0.2](https://groups.google.com/g/cbioportal/c/oTNy7Ip6xK0?utm_source=chatgpt.com)\
-[JJ Gao, 2018. threshold = 0.2](https://groups.google.com/g/cbioportal/c/4S4sPNd-Pbs?utm_source=chatgpt.com)\
+[JJ Gao, 2018. threshold = 0.2](https://groups.google.com/g/cbioportal/c/4S4sPNd-Pbs?utm_source=chatgpt.com)
 
 
 

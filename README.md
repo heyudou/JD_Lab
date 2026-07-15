@@ -17,5 +17,14 @@ Subplots:
 [FGA Figure](Normal_vs_Cancer/FGA_plots/Endometrium_Bladder_Oral_FGA_stacked_bar.pdf)
 
 
+Cancer FGA data source
+TCGA PanCancer data 2018:
+Clinical data download from:
+[BLCA](https://www.cbioportal.org/study/clinicalData?id=blca_tcga_pan_can_atlas_2018)
+[UCEC](https://www.cbioportal.org/study/clinicalData?id=ucec_tcga_pan_can_atlas_2018)
+[HNSC](https://www.cbioportal.org/study/clinicalData?id=hnsc_tcga_pan_can_atlas_2018)
+
+
+
 
 

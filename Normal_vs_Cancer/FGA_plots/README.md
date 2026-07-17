@@ -83,9 +83,11 @@ Catalog number: S04380110
 "Only 370 of 655 exomes underwent ASCAT CNV analysis."\
 of which 295 were normal urotheliums
 
-50 had at least one reported CNV segment
-46 had a dosage-altering CNA 
+50 had at least one reported CNV segment\
+46 had a dosage-altering CNA\
 4 had cnLOH only (FGA=0)
+
+For patients with multiple samples altered, select the sample with the highest FGA for final result.
 
 
 Final FGA table:

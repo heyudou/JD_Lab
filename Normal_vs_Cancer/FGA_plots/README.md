@@ -10,7 +10,7 @@ Subplots:
 4. \# of driver genes
 
 
-FGA Figure
+FGA Preliminary Figure
 <img width="1500" height="975" alt="Endometrium_Bladder_Oral_FGA_stacked_bar_page-0001" src="https://github.com/user-attachments/assets/f434ca63-2501-4284-9528-ed8ef32e4a4c" />
 
 

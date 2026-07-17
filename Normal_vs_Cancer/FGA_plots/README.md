@@ -43,7 +43,7 @@ Sources:
 
 
 ## 2020 Moores et al. Normal Endometrium [paper](https://www.nature.com/articles/s41586-020-2214-z):
-
+28 women 257 samples \
 "Somatic copy-number changes and structural variants were found in 36 out of 257 (14%) normal endometrial glands, almost all of which carried just a single change"  
 
 24 samples had SV only (FGA=0) \
@@ -59,6 +59,7 @@ of the 12 CNV posisitve samples, 8 are cnLOH (FGA=0), 4 had a true segment that 
 | PD40659c_EMD_19_C1 |              15.01 Mb |           0.52% |
 | PD41860b_EMD_G12   |             124.30 Mb |           4.32% |
 
+sample PD41860b_EMD_G12 have two altered segments.
 
 ## 2020 Lawson et al. Normal Urothelium [paper](https://www.science.org/doi/10.1126/science.aba8347)
 

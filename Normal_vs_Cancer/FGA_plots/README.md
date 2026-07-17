@@ -125,3 +125,8 @@ abstract mentione CNA in 61 of 89 (69%) patients
 CNA call GISTIC and ASCAT, no segmentation information \
 normal and tumor triads
 
+
+Updated FGA figure 7/17/2026
+<img width="3000" height="1950" alt="Endometrium_Bladder_Oral_FGA_stacked_bar" src="https://github.com/user-attachments/assets/25d3d1c1-4bee-4c19-bcaf-7fc117156d96" />
+
+

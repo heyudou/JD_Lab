@@ -1,5 +1,4 @@
 library(tidyverse)
-
 make_cancer_bins <- function(file, cancer_label, tissue_label) {
   
   tcga <- read_tsv(file, show_col_types = FALSE)
@@ -50,25 +49,25 @@ hnsc_bins <- make_cancer_bins(
 
 normal_endo_bins <- tibble(
   Tissue = "Endometrium",
-  Group = "Normal Endometrium\n(n=257)",
+  Group = "Normal Endometrium\n(n=28)",
   FGA_bin = c("0% (No CNA)", ">0–5%", "5–20%", "20–50%", ">50%"),
-  n = c(221, 36, 0, 0, 0)
+  n = c(24, 4, 0, 0, 0)
 ) %>%
   mutate(Percent = 100 * n / sum(n))
 
 normal_bladder_bins <- tibble(
   Tissue = "Bladder",
-  Group = "Normal Bladder\n(n=24)",
+  Group = "Normal Bladder\n(n=20)",
   FGA_bin = c("0% (No CNA)", ">0–5%", "5–20%", "20–50%", ">50%"),
-  n = c(12, 9, 1, 0, 2)
+  n = c(7, 12, 1, 0, 0)
 ) %>%
   mutate(Percent = 100 * n / sum(n))
 
 normal_oral_bins <- tibble(
   Tissue = "Oral",
-  Group = "Normal Oral\n(n=100)",
+  Group = "oral leukoplakia\n(n=89)",
   FGA_bin = c("0% (No CNA)", ">0–5%", "5–20%", "20–50%", ">50%"),
-  n = c(90, 10, 0, 0, 0)
+  n = c(28, 61, 0, 0, 0)
 ) %>%
   mutate(Percent = 100 * n / sum(n))
 
@@ -95,13 +94,13 @@ plot_df$FGA_bin <- factor(
 plot_df <- plot_df %>%
   mutate(
     xpos = case_when(
-      Tissue == "Bladder" & Group == "Normal Bladder\n(n=24)" ~ 1,
+      Tissue == "Bladder" & Group == "Normal Bladder\n(n=20)" ~ 1,
       Tissue == "Bladder" & Group == "BLCA\n(n=406)" ~ 2,
       
-      Tissue == "Endometrium" & Group == "Normal Endometrium\n(n=257)" ~ 4,
+      Tissue == "Endometrium" & Group == "Normal Endometrium\n(n=28)" ~ 4,
       Tissue == "Endometrium" & Group == "UCEC\n(n=519)" ~ 5,
       
-      Tissue == "Oral" & Group == "Normal Oral\n(n=100)" ~ 7,
+      Tissue == "Oral" & Group == "oral leukoplakia\n(n=89)" ~ 7,
       Tissue == "Oral" & Group == "HNSC\n(n=517)" ~ 8
     ),
     text_color = ifelse(
@@ -163,11 +162,11 @@ p <- ggplot(
   scale_x_continuous(
     breaks = c(1, 2, 4, 5, 7, 8),
     labels = c(
-      "Normal Baldder\n(n=24)",
+      "Normal Baldder\n(n=20)",
       "BLCA\n(n=406)",
-      "Normal Endometrium\n(n=257)",
+      "Normal Endometrium\n(n=28)",
       "UCEC\n(n=519)",
-      "Normal Oral\n(n=100)",
+      "oral leukoplakia\n(n=89)",
       "HNSC\n(n=517)"
     ),
     expand = c(0.02, 0.02)
@@ -187,11 +186,11 @@ p <- ggplot(
     x = NULL,
     y = "Fraction of cases (%)",
     caption =
-      "Sources: Normal endometrium data from Moore et al., Nature 2020 (n = 257 glands).
+      "Sources: Normal endometrium data from Moore et al., Nature 2020 (257 sample over 28 individual).
                 Endometrial carcinoma data from TCGA-UCEC_2018. 
-                Normal bladder is actually Noninvasive bladder cancer 
-                Normal oral values shown as assumed 90% no FGA and 10% >0–5% FGA.
+                Normal bladder data from Lawson et al., Science 2020 (2,097 sample over 20 individual). 
                 Bladder cancer data from TCGA-BLCA_2018. 
+                Oral leukoplakia data from Wils et al. Clin. Cancer Res.2023.
                 Oral cancer data from HNSC-TCGA_2018."
   ) +
   theme_classic(base_size = 16) +
@@ -211,9 +210,10 @@ p <- ggplot(
 print(p)
 
 ggsave(
-  "Endometrium_Bladder_Oral_FGA_stacked_bar.pdf",
+  "Endometrium_Bladder_Oral_FGA_stacked_bar.png",
   plot = p,
   width = 10,
   height = 6.5,
   dpi = 300
 )
+

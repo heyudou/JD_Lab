@@ -24,9 +24,7 @@ Clinical data download from:
 
 cBioportal FGA calculation approach:
 
-FGA alteration aresegments with mean log2 copy number(seg.mean) value greater than 0.2 or less than -0.2 for
-
-FGA in the clinical table is calculated based on the copy number segment data -- it is the fraction of genome that has mean log2 copy number value greater than 0.2 or less than -0.2 for each patient. 
+"FGA in the clinical table is calculated based on the copy number segment data -- it is the fraction of genome that has mean log2 copy number value greater than 0.2 or less than -0.2 for each patient. " (2018, JJ Gao)
 
 seg.mean = log2​ (tumor copy signal​ / reference copy signal)​
 

@@ -110,4 +110,12 @@ Final FGA table:
 
 
 ## Normal Oral 
-Sanger [paper] 2025 (https://www.nature.com/articles/s41586-025-09584-w#Abs1) did not perform copy number calls
+Sanger 2025 [paper](https://www.nature.com/articles/s41586-025-09584-w#Abs1)
+No copy number calls
+
+[Elucidating the GeneticLandscapeofOralLeukoplakia to Predict Malignant Transformation](https://aacrjournals.org/clincancerres/article/29/3/602/716106/Elucidating-the-Genetic-Landscape-of-Oral)
+Leukoplakia, CNV analyzed no segmentation information
+
+[Integrative analysis of genomic and transcriptomic data of normal, tumour, and co-occurring leukoplakia tissue triads drawn from patients with gingivobuccal oral cancer identifies signatures of tumour initiation and progression]([https://aacrjournals.org/clincancerres/article/29/3/602/716106/Elucidating-the-Genetic-Landscape-of-Oral](https://pathsocjournals.onlinelibrary.wiley.com/doi/10.1002/path.5900))
+Leukoplakia, normal and tumor triads, CNV analyzed no segmentation information
+

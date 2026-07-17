@@ -30,7 +30,7 @@ seg.mean = log2​ (tumor copy signal​ / reference copy signal)​
 
 Ideally needs CNV segmentation files to calculate. But based on this definition: \
 SV-only samples should remain FGA = 0 \
-cnLOH-only samples should remain FGA = 0 \
+cnLOH-only samples should remain FGA = 0 
 
 
 Sources:

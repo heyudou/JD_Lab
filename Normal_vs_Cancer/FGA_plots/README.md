@@ -119,6 +119,7 @@ No copy number calls
 Leukoplakia \
 [Elucidating the GeneticLandscapeofOralLeukoplakia to Predict Malignant Transformation](https://aacrjournals.org/clincancerres/article/29/3/602/716106/Elucidating-the-Genetic-Landscape-of-Oral)
 CNV analyzed no segmentation information
+abstract mentione CNA in 61 of 89 (69%) patients
 
 [Integrative analysis of genomic and transcriptomic data of normal, tumour, and co-occurring leukoplakia tissue triads drawn from patients with gingivobuccal oral cancer identifies signatures of tumour initiation and progression](https://pathsocjournals.onlinelibrary.wiley.com/doi/10.1002/path.5900) \
 CNA call GISTIC and ASCAT, no segmentation information \

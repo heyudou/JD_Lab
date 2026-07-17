@@ -106,3 +106,8 @@ Final FGA table:
 | T08        | T08_61F_b01_lo0165 | Targeted + WES      |          2 |   6,376,697 |                 0.22% | 0.1–5%  |
 | T02        | T02_35F_b05_lo0002 | Targeted + WES      |          1 |   4,193,516 |                 0.15% | 0.1–5%  |
 | T03        | T03_53F_b08_lo0079 | Targeted + WES      |          1 |   4,089,882 |                 0.14% | 0.1–5%  |
+
+
+
+## Normal Oral 
+Sanger [paper] 2025 (https://www.nature.com/articles/s41586-025-09584-w#Abs1) did not perform copy number calls

@@ -1,4 +1,4 @@
-## Normal vs Cancer genomic differences summary plots
+# Normal vs Cancer genomic differences summary plots
 
 Tissues: \
 Bladder, Endometrium and Oral
@@ -14,7 +14,7 @@ FGA Figure
 <img width="1500" height="975" alt="Endometrium_Bladder_Oral_FGA_stacked_bar_page-0001" src="https://github.com/user-attachments/assets/f434ca63-2501-4284-9528-ed8ef32e4a4c" />
 
 
-Cancer FGA data source
+## Cancer FGA data source
 TCGA PanCancer data 2018:
 Clinical data download from:
 [BLCA](https://www.cbioportal.org/study/clinicalData?id=blca_tcga_pan_can_atlas_2018)
@@ -42,7 +42,7 @@ Sources:
 
 
 
-2020 Moores et al. Normal Endometrium [paper](https://www.nature.com/articles/s41586-020-2214-z):
+## 2020 Moores et al. Normal Endometrium [paper](https://www.nature.com/articles/s41586-020-2214-z):
 
 "Somatic copy-number changes and structural variants were found in 36 out of 257 (14%) normal endometrial glands, almost all of which carried just a single change"  
 
@@ -60,4 +60,5 @@ of the 12 CNV posisitve samples, 8 are cnLOH (FGA=0), 4 had a true segment that 
 | PD41860b_EMD_G12   |             124.30 Mb |           4.32% |
 
 
+## 2020 Lawson et al. Normal Urothelium [paper](https://www.science.org/doi/10.1126/science.aba8347)
 

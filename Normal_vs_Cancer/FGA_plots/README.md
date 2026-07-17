@@ -1,7 +1,3 @@
-# JD_Lab
-projects in JD lab at JHU
-
-
 ## Normal vs Cancer genomic differences summary plots
 
 Tissues: \

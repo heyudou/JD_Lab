@@ -48,7 +48,7 @@ Sources:
 
 24 samples had SV only (FGA=0) \
 11 samples had CNV only \
-1 sample had both SV and CNV\ 
+1 sample had both SV and CNV
 
 of the 12 CNV posisitve samples, 8 are cnLOH (FGA=0), 4 had a true segment that can be used to compute for FGA:
 

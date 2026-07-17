@@ -23,15 +23,20 @@ Clinical data download from:
 
 
 cBioportal FGA calculation approach:\
-cBioPortal computes the fraction genome altered (FGA) by summing up the length of all segments with a copy-number >|0.2| (absolute value greater than 0.2) and then divides that sum by the length of the genome.\
 
+FGA alteration aresegments with mean log2 copy number(seg.mean) value greater than 0.2 or less than -0.2 for
+
+FGA in the clinical table is calculated based on the copy number segment data -- it is the fraction of genome that has mean log2 copy number value greater than 0.2 or less than -0.2 for each patient. \
+
+seg.mean=log2​(tumor copy signal​/reference copy signal)​\
 \
-threshold of 0.2: \
+
+Ideally needs segmentation files to calculate. Sources:
+\
 [Nikolaus Schultz, 2024, threshold = 0.2](https://groups.google.com/g/cbioportal/c/vAmCgG44ge0?utm_source=chatgpt.com) \
 [Nikolaus Schultz, 2020, threshold = 0.1](https://groups.google.com/g/cbioportal/c/SqtGhn-AZ4s?utm_source=chatgpt.com)\
 [Robert Sheridan, 2019, threshold = 0.2](https://groups.google.com/g/cbioportal/c/oWO1LFXGHHs?utm_source=chatgpt.com)\
-[JJ Gao, 2018. threshold = 0.2](https://groups.google.com/g/cbioportal/c/oTNy7Ip6xK0?utm_source=chatgpt.com)\
-[JJ Gao, 2018. threshold = 0.2](https://groups.google.com/g/cbioportal/c/4S4sPNd-Pbs?utm_source=chatgpt.com)
+[JJ Gao, 2018. threshold = 0.2](https://groups.google.com/g/cbioportal/c/oTNy7Ip6xK0?utm_source=chatgpt.com)
 
 
 

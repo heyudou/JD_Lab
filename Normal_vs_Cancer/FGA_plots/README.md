@@ -22,7 +22,10 @@ Clinical data download from:
 [HNSC](https://www.cbioportal.org/study/clinicalData?id=hnsc_tcga_pan_can_atlas_2018)
 
 
-cBioportal FGA calculation approach, threshold of 0.2: \
+cBioportal FGA calculation approach:
+cBioPortal computes the fraction genome altered (FGA) by summing up the length of all segments with a copy-number >|0.2| (absolute value greater than 0.2) and then divides that sum by the length of the genome.
+
+threshold of 0.2: \
 [Nikolaus Schultz, 2024, threshold = 0.2](https://groups.google.com/g/cbioportal/c/vAmCgG44ge0?utm_source=chatgpt.com) \
 [Nikolaus Schultz, 2020, threshold = 0.1](https://groups.google.com/g/cbioportal/c/SqtGhn-AZ4s?utm_source=chatgpt.com)\
 [Robert Sheridan, 2019, threshold = 0.2](https://groups.google.com/g/cbioportal/c/oWO1LFXGHHs?utm_source=chatgpt.com)\

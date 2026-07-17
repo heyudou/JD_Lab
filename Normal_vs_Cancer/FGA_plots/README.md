@@ -1,4 +1,4 @@
-# Normal vs Cancer genomic differences summary plots
+# Normal vs Cancer FGA difference
 
 Tissues: \
 Bladder, Endometrium and Oral

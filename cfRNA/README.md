@@ -5,7 +5,7 @@ Goal: To detect cancer specific changes in the RNA, to detect aneuploidy, higher
 # Data
 For method checking:
 
-use [HCA](https://data.humancellatlas.org/) data: [Breast cancer cells](https://explore.data.humancellatlas.org/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0)
+use [HCA](https://data.humancellatlas.org/) data: [Single cell sequencing of breast cancer cells](https://explore.data.humancellatlas.org/projects/f6133d2a-9f3d-4ef9-9c19-c23d6c7e6cc0)
 
 [ENA access](https://www.ebi.ac.uk/ena/browser/view/SRP213890)
 [SRA run selector](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA553537&o=avgspotlen_l%3Aa%3Bacc_s%3Aa)

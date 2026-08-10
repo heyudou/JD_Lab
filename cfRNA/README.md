@@ -12,7 +12,8 @@ use [HCA](https://data.humancellatlas.org/) data: [Single cell sequencing of bre
 
 
 
-Individual Smart-seq2 cell is too sparse and noisy for a clean genome-wide allelic-imbalance test. Using these single-cell RNA seq to detect a population-level tumor RNA signal (cfRNA) requires me to build a pseudobulk sequencing sample as high-signal baseline.
+Individual Smart-seq2 cell is too sparse and noisy for a clean genome-wide allelic-imbalance test. Using these single-cell RNA seq to detect a population-level tumor RNA signal (cfRNA) requires me to build a pseudobulk sequencing sample as high-signal baseline.\
+Advantage: This single-cell RNA-seq dataset provides a flexible framework for developing and testing an RNA-based CNA/allelic-imbalance detection method. By combining individual MCF7 cells, we can first create a high-signal pseudobulk to determine whether known cancer-associated copy-number changes can be recovered from RNA. Because individual cells remain separately sequenced, we can later construct controlled synthetic mixtures of cancer and normal RNA at defined tumor fractions and sequencing depths, generating many replicate “cfRNA-like” cocktails to characterize sensitivity and limit of detection. This also allows us to independently evaluate expression-depth and allelic-imbalance signals and determine whether combining them improves cancer detection.
 
 
 SRA metadata\

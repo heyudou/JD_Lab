@@ -11,6 +11,10 @@ use [HCA](https://data.humancellatlas.org/) data: [Breast cancer cells](https://
 [SRA run selector](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA553537&o=avgspotlen_l%3Aa%3Bacc_s%3Aa)
 
 
+
+Individual Smart-seq2 cell is too sparse and noisy for a clean genome-wide allelic-imbalance test. Using these single-cell RNA seq to detect a population-level tumor RNA signal (cfRNA) requires me to build a pseudobulk sequencing sample as high-signal baseline.
+
+
 SRA metadata\
 384 single-end RNA-seq MCF7 cells, single-end\
 192 Norm cells, 191 Hypoxia cells
@@ -22,9 +26,7 @@ Choose 30 Normal cells with ≥1 million reads to make a pseudo-bulk sequencing
 
 
 
-
-
- Download GRCh38 reference file ###
- https://www.gencodegenes.org/human/
- Comprehensive gene annotation → PRI → GTF
- Genome sequence, primary assembly (GRCh38) → PRI → Fasta
+STAR alignment reference files:
+Download current [GRCh38 reference](https://www.gencodegenes.org/human/)\
+Comprehensive gene annotation → PRI → GTF\
+Genome sequence, primary assembly (GRCh38) → PRI → Fasta

@@ -74,6 +74,36 @@ These SNPs are reported in hg19 coordinates, they are converted to GRCh38 and va
 
 
 
+Using a minimum **REF+ALT RNA depth of 10×**, 2,495 MCF7 heterozygous SNPs were retained for allelic-imbalance analysis.
+
+| Chromosome | SNPs (≥10×) |
+|---|---:|
+| chr1 | 185 |
+| chr2 | 221 |
+| chr3 | 115 |
+| chr4 | 106 |
+| chr5 | 118 |
+| chr6 | 135 |
+| chr7 | 82 |
+| chr8 | 111 |
+| chr9 | 94 |
+| chr10 | 134 |
+| chr11 | 116 |
+| chr12 | 158 |
+| chr13 | 5 |
+| chr14 | 125 |
+| chr15 | 72 |
+| chr16 | 164 |
+| chr17 | 141 |
+| chr18 | 7 |
+| chr19 | 197 |
+| chr20 | 102 |
+| chr21 | 0 |
+| chr22 | 101 |
+| chrX | 6 |
+| **Total** | **2,495** |
+
+
 
 For sufficiently covered SNPs, RNA allele fraction is calculated as:
 

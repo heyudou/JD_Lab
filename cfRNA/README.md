@@ -135,7 +135,11 @@ Regional deviations from balanced allele ratios are then evaluated as potential 
 
 Known MCF7 heterozygous SNPs with **REF+ALT RNA depth ≥10×** were used for allelic-imbalance analysis (2,495 SNPs).
 
-### 1. Genome-wide RNA BAF
+### 1. RNA BAF distribution
+<img width="2370" height="1470" alt="04_RNA_BAF_histogram_depth10" src="https://github.com/user-attachments/assets/0c1186a5-6dc7-4f06-a329-af83237f0f84" />
+
+
+### 2. Genome-wide RNA BAF
 
 RNA B-allele fraction was calculated as:
 
@@ -145,7 +149,7 @@ BAF = \frac{ALT}{REF+ALT}
 
 BAF = 0.5 represents balanced REF/ALT expression, while values approaching 0 or 1 indicate increasing allelic imbalance.
 
-### 2. Genome-wide RNA MAF
+### 3. Genome-wide RNA MAF
 
 BAF was folded into minor-allele fraction:
 
@@ -155,24 +159,22 @@ MAF = \min(BAF,1-BAF)
 
 MAF ranges from **0–0.5**, with lower values indicating stronger allelic imbalance.
 
-### 3. Regional MAF
+
+
+*Additional plots*
+### 4. Regional MAF
 
 A **25-SNP rolling median** was added to the genome-wide MAF plot, and **15-SNP rolling medians** were generated for individual chromosomes. These help identify regional allelic-imbalance patterns that may correspond to CNAs.
 
-### 4. Chromosome-Level MAF
+### 5. Chromosome-Level MAF
 
 Boxplots summarize MAF distributions across chromosomes, allowing chromosome-wide differences in allelic imbalance to be compared.
 
-### 5. Depth vs. MAF
 
-RNA MAF was compared with REF+ALT read depth to determine whether extreme allele fractions are driven by low sequencing coverage.
 
 ### 6. Depth Sensitivity
 
 Genome-wide MAF was compared at **≥10×, ≥20×, ≥30×, and ≥50×** coverage to assess whether regional patterns remain stable with increasing read-depth stringency.
 
-### Goal
-
-The analysis searches for **coherent allelic imbalance across neighboring SNPs**, rather than interpreting individual SNPs as CNAs.
 
 The next step is to compare these RNA allelic-imbalance patterns with an independent **MCF7 DNA allele-specific copy-number profile**.

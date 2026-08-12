@@ -110,8 +110,8 @@ Using a minimum **REF+ALT RNA depth of 10×**, 2,495 MCF7 heterozygous SNPs were
 | **Total** | **2,495** |
 
 
-*Calculate the BAF*:\
-1. Genome-wide BAF plot\
+*Calculate the BAF*:
+1. Genome-wide BAF plot
 <img width="4770" height="1770" alt="MCF7_pseudobulk_genomewide_RNA_BAF" src="https://github.com/user-attachments/assets/9ab8d556-edce-49a2-9a43-89548e15f6ac" />
 
 

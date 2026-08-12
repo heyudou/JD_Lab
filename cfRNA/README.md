@@ -72,8 +72,14 @@ These SNPs are reported in hg19 coordinates, they are converted to GRCh38 and va
 
 **MCF7 CNV profile**
 
+*variability issue*: a recent [publication](./cfRNA_papers/MCF7_variability.pdf) studied 27 strains of MCF7 and found "26% of genes altered by copy number
+alterations (CNAs) (range, 7% to 99%) were discordant (Extended Data Fig. 1c–e). These
+results indicate that genetic variability across versions of the same cell line is common." 
 
 
+
+### RESULTS
+*** NP sites to calculate BAF ***
 Using a minimum **REF+ALT RNA depth of 10×**, 2,495 MCF7 heterozygous SNPs were retained for allelic-imbalance analysis.
 
 | Chromosome | SNPs (≥10×) |

@@ -49,9 +49,24 @@ Choose 30 Normal cells with ≥1 million reads to make a pseudo-bulk sequencing
        Regional CNA signal
               ↓
     Compare with DNA CNA reference
-Thirty independently sequenced MCF7 cells are initially combined into a pseudobulk to increase coverage and reduce single-cell allelic dropout.
 
-An independent published reference containing approximately **11,500 MCF7 heterozygous SNPs** is used to define informative loci. Because these SNPs are reported in hg19 coordinates, they are converted to GRCh38 and validated against the same reference genome used for RNA alignment.
+
+Reference files required:
+
+STAR alignment reference files:
+Download current [GRCh38 reference](https://www.gencodegenes.org/human/)\
+Comprehensive gene annotation → PRI → GTF\
+Genome sequence, primary assembly (GRCh38) → PRI → Fasta
+
+
+**MCF7 heterozygous SNPs**
+
+Table S1 of [publication](https://pmc.ncbi.nlm.nih.gov/articles/PMC8666669/?utm_source=chatgpt.com#appsec2) listed approximately **11,500 MCF7 heterozygous SNPs** is used to define informative loci. Because these SNPs are reported in hg19 coordinates, they are converted to GRCh38 and validated against the same reference genome used for RNA alignment.
+
+**MCF7 CNV profile**
+
+
+
 
 For sufficiently covered SNPs, RNA allele fraction is calculated as:
 
@@ -59,19 +74,4 @@ For sufficiently covered SNPs, RNA allele fraction is calculated as:
 
 Regional deviations from balanced allele ratios are then evaluated as potential CNA signals.
 
-## Future Development
 
-The method will eventually combine two complementary RNA signals:
-
-    allelic imbalance + regional expression depth
-                        ↓
-                 RNA-based CNA detection
-
-Because the dataset contains independently sequenced cells, it also enables construction of controlled **synthetic cfRNA-like mixtures**. MCF7 and normal RNA can be mixed at defined cancer fractions and sequencing depths to evaluate sensitivity and analytical limits of detection.
-
-
-#### references
-STAR alignment reference files:
-Download current [GRCh38 reference](https://www.gencodegenes.org/human/)\
-Comprehensive gene annotation → PRI → GTF\
-Genome sequence, primary assembly (GRCh38) → PRI → Fasta

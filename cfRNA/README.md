@@ -79,7 +79,7 @@ results indicate that genetic variability across versions of the same cell line 
 
 
 ### RESULTS
-*** NP sites to calculate BAF ***
+***SNP sites to calculate BAF***
 Using a minimum **REF+ALT RNA depth of 10×**, 2,495 MCF7 heterozygous SNPs were retained for allelic-imbalance analysis.
 
 | Chromosome | SNPs (≥10×) |

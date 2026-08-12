@@ -160,6 +160,21 @@ Genome-wide MAF was compared at **≥10×, ≥20×, ≥30×, and ≥50×** cover
 
 
 
+2 strongest candidates for potential CNV
+### Strongest Candidate Regions of Regional Allelic Imbalance
+
+Two regions showed the clearest combination of **dense SNP coverage** and a **sustained regional shift in RNA MAF**:
+
+- **chr19: ~10–20 Mb**  
+  RNA MAF is consistently shifted toward approximately **0.2–0.3** across multiple neighboring SNPs, suggesting a strong regional allelic-imbalance signal. :contentReference[oaicite:0]{index=0}
+
+- **chr2: ~225–245 Mb**  
+  A dense cluster of informative SNPs shows a coordinated decrease in RNA MAF from approximately **0.45 toward ~0.28** near the distal end of chromosome 2. :contentReference[oaicite:1]{index=1}
+
+These regions are considered **candidate allele-specific genomic alterations**, not definitive CNV calls, until validated against an independent DNA copy-number reference.
+
+
+
 
 
 

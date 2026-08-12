@@ -111,12 +111,16 @@ Using a minimum **REF+ALT RNA depth of 10×**, 2,495 MCF7 heterozygous SNPs were
 
 
 *Calculate the BAF*:
-1. Genome-wide BAF plot
+1. Genome-wide folded B-allele fraction 
 <img width="4770" height="1770" alt="MCF7_pseudobulk_genomewide_RNA_BAF" src="https://github.com/user-attachments/assets/9ab8d556-edce-49a2-9a43-89548e15f6ac" />
 
 
-2. Per-chromosome detailed plots\
-   
+2. genome-wide folded minor-allele fraction (MAF)
+<img width="4770" height="1770" alt="MCF7_pseudobulk_genomewide_RNA_MAF" src="https://github.com/user-attachments/assets/e5006308-7f87-421f-8cd0-1025dc584188" />
+MAF ≈ 0.5 → balanced RNA allelic expression
+MAF ≈ 0.33 → potentially compatible with a 2:1 allelic ratio
+MAF ≈ 0.25 → potentially compatible with 3:1
+MAF → 0 → extreme imbalance / monoallelic expression
 
 For sufficiently covered SNPs, RNA allele fraction is calculated as:
 

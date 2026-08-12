@@ -53,7 +53,8 @@ Choose 30 Normal cells with ≥1 million reads to make a pseudo-bulk sequencing
 
 Reference files required:
 
-STAR alignment reference files:
+**STAR alignment reference files:**
+
 Download current [GRCh38 reference](https://www.gencodegenes.org/human/)\
 Comprehensive gene annotation → PRI → GTF\
 Genome sequence, primary assembly (GRCh38) → PRI → Fasta

@@ -159,4 +159,8 @@ Boxplots summarize MAF distributions across chromosomes, allowing chromosome-wid
 Genome-wide MAF was compared at **≥10×, ≥20×, ≥30×, and ≥50×** coverage to assess whether regional patterns remain stable with increasing read-depth stringency.
 
 
-The next step is to compare these RNA allelic-imbalance patterns with an independent **MCF7 DNA allele-specific copy-number profile**.
+
+
+
+
+Next Step: compare these RNA allelic-imbalance patterns with an independent **MCF7 DNA allele-specific copy-number profile**. Also obtain more MCF7 heterozygous sites.

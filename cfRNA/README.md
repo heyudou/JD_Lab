@@ -168,8 +168,13 @@ Two regions showed the clearest combination of **dense SNP coverage** and a **su
 - **chr19: ~10–20 Mb**  
   RNA MAF is consistently shifted toward approximately **0.2–0.3** across multiple neighboring SNPs, suggesting a strong regional allelic-imbalance signal. :contentReference[oaicite:0]{index=0}
 
+<img width="3269" height="1320" alt="chr19_MAF_rolling15_depth10" src="https://github.com/user-attachments/assets/36e21934-4b1e-4bfb-a0a0-0dfe7f06b614" />
+
 - **chr2: ~225–245 Mb**  
   A dense cluster of informative SNPs shows a coordinated decrease in RNA MAF from approximately **0.45 toward ~0.28** near the distal end of chromosome 2. :contentReference[oaicite:1]{index=1}
+
+<img width="3264" height="1320" alt="chr2_MAF_rolling15_depth10" src="https://github.com/user-attachments/assets/13924b33-a500-48ba-9d6b-d843f439ee47" />
+
 
 These regions are considered **candidate allele-specific genomic alterations**, not definitive CNV calls, until validated against an independent DNA copy-number reference.
 

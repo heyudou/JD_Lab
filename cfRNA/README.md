@@ -55,7 +55,7 @@ Reference files required:
 
 **STAR alignment reference files:**
 
-Download current [GRCh38 reference](https://www.gencodegenes.org/human/)\
+Current [GRCh38 reference](https://www.gencodegenes.org/human/)\
 Comprehensive gene annotation → PRI → GTF\
 Genome sequence, primary assembly (GRCh38) → PRI → Fasta
 

@@ -28,10 +28,49 @@ Choose 30 Normal cells with ≥1 million reads to make a pseudo-bulk sequencing
 
 
 
-# Workflow
+### Workflow
+
+    MCF7 Smart-seq2 FASTQs
+              ↓
+        FastQC / MultiQC
+              ↓
+       STAR alignment (GRCh38)
+              ↓
+       Individual cell BAMs
+              ↓
+       30-cell pseudobulk
+              ↓
+    MCF7 heterozygous SNP panel
+              ↓
+       REF / ALT RNA counts
+              ↓
+       Allelic imbalance
+              ↓
+       Regional CNA signal
+              ↓
+    Compare with DNA CNA reference
+Thirty independently sequenced MCF7 cells are initially combined into a pseudobulk to increase coverage and reduce single-cell allelic dropout.
+
+An independent published reference containing approximately **11,500 MCF7 heterozygous SNPs** is used to define informative loci. Because these SNPs are reported in hg19 coordinates, they are converted to GRCh38 and validated against the same reference genome used for RNA alignment.
+
+For sufficiently covered SNPs, RNA allele fraction is calculated as:
+
+    ALT / (REF + ALT)
+
+Regional deviations from balanced allele ratios are then evaluated as potential CNA signals.
+
+## Future Development
+
+The method will eventually combine two complementary RNA signals:
+
+    allelic imbalance + regional expression depth
+                        ↓
+                 RNA-based CNA detection
+
+Because the dataset contains independently sequenced cells, it also enables construction of controlled **synthetic cfRNA-like mixtures**. MCF7 and normal RNA can be mixed at defined cancer fractions and sequencing depths to evaluate sensitivity and analytical limits of detection.
 
 
-
+#### references
 STAR alignment reference files:
 Download current [GRCh38 reference](https://www.gencodegenes.org/human/)\
 Comprehensive gene annotation → PRI → GTF\

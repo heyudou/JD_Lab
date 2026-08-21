@@ -6,7 +6,7 @@ Goal: To detect cancer specific changes in the RNA, to detect aneuploidy, higher
 
 ## Table of Contents
 
-- [MCF7 cell lines for proof of concept](#iMCF7 cell lines for proof of concept)
+- [MCF7 cell lines for proof of concept] (#MCF7 cell lines for proof of concept)
 - [Getting Started](#getting-started)
 
 

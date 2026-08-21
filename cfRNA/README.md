@@ -180,6 +180,17 @@ These regions are considered **candidate allele-specific genomic alterations**, 
 
 
 
+## HCC1395 cell lines for proof of concept
+
+### Design
+**Strategy**: Use triple-negative breast cancer (TNBC) cell line (HCC1395) and a B lymphocyte-derived normal cell line (HCC1395BL) from the same donor from the American Type Culture Collection (ATCC).
+
+**Rationale**: Find matched trio: tumor and normal DNA seq and RNA seq from the same donor.
+
+**Source**: From [publication](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2026-0887.pdf?utm_source=chatgpt.com) table 2
+
+
+
 
 
 

@@ -180,6 +180,9 @@ These regions are considered **candidate allele-specific genomic alterations**, 
 
 
 
+Next Step: compare these RNA allelic-imbalance patterns with an independent **MCF7 DNA allele-specific copy-number profile**. Also obtain more MCF7 heterozygous sites.
+
+
 ## HCC1395 cell lines for proof of concept
 
 ### Design
@@ -194,4 +197,3 @@ These regions are considered **candidate allele-specific genomic alterations**, 
 
 
 
-Next Step: compare these RNA allelic-imbalance patterns with an independent **MCF7 DNA allele-specific copy-number profile**. Also obtain more MCF7 heterozygous sites.

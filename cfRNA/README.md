@@ -914,4 +914,91 @@ This provides a strong proof of concept for using RNA-derived allelic imbalance 
 
 
 
+# Reproduction of Yizhak et al. Figure S15
+
+This project reproduces the allelic-imbalance (AI) analysis shown in **Figure S15 of Yizhak et al.**, comparing allele fractions (AF) measured from matched normal DNA, tumor DNA, and tumor RNA.
+
+Four TCGA cases shown in the original figure were analyzed:
+
+- **CESC-DS-A0VK (A)**
+- **CESC-FU-A23K (B)**
+- **KIRC-AK-3447 (C)**
+- **LUAD-05-4398 (D)**
+
+## Workflow
+
+Matched normal WXS, tumor WXS, and tumor RNA-seq BAMs were obtained from GDC.
+
+Germline heterozygous SNPs were identified from normal DNA using GATK HaplotypeCaller. REF/ALT read counts were then measured at these positions in normal DNA, tumor DNA, and tumor RNA.
+
+For each SNP:
+
+`AF = ALT / (REF + ALT)`
+
+For chromosome-arm AI analysis, AF was folded around 0.5:
+
+`minAF = min(AF, 1 - AF)`
+
+and the mean `minAF` was calculated for each chromosome arm.
+
+Lower arm-level mean `minAF` indicates stronger allelic imbalance.
+
+---
+
+## Calling Allelic Imbalance
+
+A major distinction between the reproduction and the original analysis is how an arm is classified as **allelically imbalanced**.
+
+### Original Yizhak method
+
+Yizhak et al. did **not use a universal AF or mean-minAF threshold**.
+
+Instead, they examined the empirical distribution of mean `minAF` for each chromosome arm across thousands of GTEx samples.
+
+The study analyzed **6,729 GTEx samples**, excluded 329 samples with excessive AI, and fitted an arm-specific **beta distribution** using samples containing at least 100 heterozygous sites.
+
+The procedure was approximately:
+
+```text
+Individual heterozygous SNPs
+            │
+            ▼
+       Calculate AF
+            │
+            ▼
+   min(AF, 1 - AF)
+            │
+            ▼
+Mean minAF for chromosome arm
+            │
+            ▼
+Empirical distribution of that arm
+across thousands of GTEx samples
+            │
+            ▼
+ Fit arm-specific beta distribution
+            │
+            ▼
+ Calculate one-sided P value
+            │
+            ▼
+   Multiple-testing correction
+            │
+            ▼
+          Q < 0.05
+            │
+            ▼
+     Allelic imbalance
+
+
+Original S15
+
+<img width="599" height="569" alt="S15" src="https://github.com/user-attachments/assets/f956437c-00e2-46a8-bdce-a41f46e09866" />
+
+
+Replicated:
+
+<img width="8404" height="6450" alt="TCGA_S15_alt3_all_cases" src="https://github.com/user-attachments/assets/300609b2-d7c0-4e22-907e-6b3b50e28a9a" />
+
+
 

@@ -916,6 +916,15 @@ This provides a strong proof of concept for using RNA-derived allelic imbalance 
 
 # Reproduction of Yizhak et al. Figure S15
 
+Original S15
+
+<img width="599" height="569" alt="S15" src="https://github.com/user-attachments/assets/f956437c-00e2-46a8-bdce-a41f46e09866" />
+
+
+Replicated:
+
+<img width="8404" height="6450" alt="TCGA_S15_alt3_all_cases" src="https://github.com/user-attachments/assets/300609b2-d7c0-4e22-907e-6b3b50e28a9a" />
+
 This project reproduces the allelic-imbalance (AI) analysis shown in **Figure S15 of Yizhak et al.**, comparing allele fractions (AF) measured from matched normal DNA, tumor DNA, and tumor RNA.
 
 Four TCGA cases shown in the original figure were analyzed:
@@ -990,15 +999,6 @@ across thousands of GTEx samples
             ▼
      Allelic imbalance
 
-
-Original S15
-
-<img width="599" height="569" alt="S15" src="https://github.com/user-attachments/assets/f956437c-00e2-46a8-bdce-a41f46e09866" />
-
-
-Replicated:
-
-<img width="8404" height="6450" alt="TCGA_S15_alt3_all_cases" src="https://github.com/user-attachments/assets/300609b2-d7c0-4e22-907e-6b3b50e28a9a" />
 
 
 

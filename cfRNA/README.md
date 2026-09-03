@@ -998,8 +998,7 @@ across thousands of GTEx samples
             │
             ▼
      Allelic imbalance
-
-
+```
 
 
 
@@ -1037,4 +1036,3 @@ DP >= 10 + AF 0.05-0.95:            463
 
 Mean raw ALT AF:                  0.4654
 Mean minAF:                       0.2764
-

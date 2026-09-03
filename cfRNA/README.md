@@ -1006,6 +1006,30 @@ across thousands of GTEx samples
 
 To identify candidate heterozygous sites from RNA-seq without matched DNA, we constructed a population-based SNP panel from `Homo_sapiens_assembly38.dbsnp138.vcf`.
 
+
+### Chromosomal distribution of candidate SNPs
+
+The 205,511 exonic candidate SNPs were distributed across the 22 autosomes as follows:
+
+| Chromosome | Candidate SNPs | Chromosome | Candidate SNPs |
+|---|---:|---|---:|
+| chr1 | 17,720 | chr12 | 10,660 |
+| chr2 | 15,405 | chr13 | 5,579 |
+| chr3 | 12,014 | chr14 | 7,220 |
+| chr4 | 10,682 | chr15 | 7,271 |
+| chr5 | 10,742 | chr16 | 7,948 |
+| chr6 | 14,688 | chr17 | 8,858 |
+| chr7 | 10,828 | chr18 | 4,964 |
+| chr8 | 8,833 | chr19 | 10,841 |
+| chr9 | 7,949 | chr20 | 5,018 |
+| chr10 | 8,963 | chr21 | 3,203 |
+| chr11 | 11,251 | chr22 | **4,874** |
+| **Total** |  |  | **205,511** |
+
+Chromosome 22 contains **4,874 candidate SNPs** and was selected for the initial proof-of-concept RNA allele-counting test.
+
+#
+
 ### Population SNP filtering
 
 Starting from the whole-genome dbSNP138 VCF:

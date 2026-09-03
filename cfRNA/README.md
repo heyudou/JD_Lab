@@ -1060,3 +1060,18 @@ DP >= 10 + AF 0.05-0.95:            463
 
 Mean raw ALT AF:                  0.4654
 Mean minAF:                       0.2764
+```
+
+The result captured the alelle imbalance from previosu plot:
+```test
+===== Plot summary =====
+Sample:          TCGA-05-4398
+Chromosome:      chr22
+Sites plotted:   463
+Mean minAF:      0.2764
+Mean lower AF:   0.2520
+Mean upper AF:   0.7055
+```
+
+[chr22_AI.pdf](https://github.com/user-attachments/files/31805576/chr22_AI.pdf)
+

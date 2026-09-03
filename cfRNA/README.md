@@ -1002,3 +1002,39 @@ across thousands of GTEx samples
 
 
 
+
+## RNA-only SNP Panel Construction and chr22 Test
+
+To identify candidate heterozygous sites from RNA-seq without matched DNA, we constructed a population-based SNP panel from `Homo_sapiens_assembly38.dbsnp138.vcf`.
+
+### Population SNP filtering
+
+Starting from the whole-genome dbSNP138 VCF:
+
+| Filtering step | SNPs remaining |
+|---|---:|
+| All dbSNP records | 60,691,395 |
+| Autosomal records (chr1–22) | 58,373,860 |
+| Biallelic SNVs | 51,049,361 |
+| Sites with 1000 Genomes CAF | 36,545,720 |
+| MAF ≥ 0.20 | 3,274,054 |
+| Unique MAF ≥ 0.20 SNP positions | 3,274,045 |
+| Within GENCODE v50 exons | **205,511** |
+
+The final population panel therefore contains **205,511 common, exonic, biallelic SNPs** with MAF ≥ 0.20.
+
+### chr22 test — TCGA-05-4398 RNA-seq
+
+Chromosome 22 was used as an initial test of the RNA-only allele-counting workflow. The exonic population panel contained **4,874 candidate SNPs on chr22**. RNA REF/ALT counts were obtained from the TCGA-05-4398 RNA-seq BAM using `samtools mpileup` with mapping quality ≥20 and base quality ≥20.
+
+```text
+Candidate SNPs on chr22:           4,874
+Sites reported by mpileup:         3,760
+Reference mismatches removed:          0
+Sites with REF/ALT coverage:       2,816
+Sites with DP >= 10:               1,243
+DP >= 10 + AF 0.05-0.95:            463
+
+Mean raw ALT AF:                  0.4654
+Mean minAF:                       0.2764
+

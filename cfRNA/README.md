@@ -1006,6 +1006,24 @@ across thousands of GTEx samples
 
 To identify candidate heterozygous sites from RNA-seq without matched DNA, we constructed a population-based SNP panel from `Homo_sapiens_assembly38.dbsnp138.vcf`.
 
+### Population SNP filtering
+
+Starting from the whole-genome dbSNP138 VCF:
+
+| Filtering step | SNPs remaining |
+|---|---:|
+| All dbSNP records | 60,691,395 |
+| Autosomal records (chr1–22) | 58,373,860 |
+| Biallelic SNVs | 51,049,361 |
+| Sites with 1000 Genomes CAF | 36,545,720 |
+| MAF ≥ 0.20 | 3,274,054 |
+| Unique MAF ≥ 0.20 SNP positions | 3,274,045 |
+| Within GENCODE v50 exons | **205,511** |
+
+The final population panel therefore contains **205,511 common, exonic, biallelic SNPs** with MAF ≥ 0.20.
+
+
+
 
 ### Chromosomal distribution of candidate SNPs
 
@@ -1027,24 +1045,6 @@ The 205,511 exonic candidate SNPs were distributed across the 22 autosomes as fo
 | **Total** |  |  | **205,511** |
 
 Chromosome 22 contains **4,874 candidate SNPs** and was selected for the initial proof-of-concept RNA allele-counting test.
-
-#
-
-### Population SNP filtering
-
-Starting from the whole-genome dbSNP138 VCF:
-
-| Filtering step | SNPs remaining |
-|---|---:|
-| All dbSNP records | 60,691,395 |
-| Autosomal records (chr1–22) | 58,373,860 |
-| Biallelic SNVs | 51,049,361 |
-| Sites with 1000 Genomes CAF | 36,545,720 |
-| MAF ≥ 0.20 | 3,274,054 |
-| Unique MAF ≥ 0.20 SNP positions | 3,274,045 |
-| Within GENCODE v50 exons | **205,511** |
-
-The final population panel therefore contains **205,511 common, exonic, biallelic SNPs** with MAF ≥ 0.20.
 
 ### chr22 test — TCGA-05-4398 RNA-seq
 

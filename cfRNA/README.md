@@ -1121,3 +1121,167 @@ These results indicate that lowering the population MAF threshold substantially 
 
 **Table:** Number of candidate DCB SNPs with **RNA depth ≥10**. Values are shown as `covered SNPs / total candidate SNPs (% of panel)`. Lowering the population MAF threshold substantially increases the absolute number of DCB SNPs available for allele-specific analysis. Even at MAF ≥5%, all four samples retain dozens of well-covered loci, with TCGA-05-4398 containing 109 sites at DP ≥10.
 
+
+
+## DCB RNA SNP Coverage and Allelic-Imbalance Screening
+
+We screened common SNPs located within the 19 dark-channel biomarker (DCB) genes to determine which loci are observable in tumor RNA and potentially informative for allelic-imbalance (AI) analysis. Four TCGA tumor RNA-seq samples were used for this pilot analysis:
+
+| TCGA case | Cancer type |
+|---|---|
+| TCGA-05-4398 | Lung adenocarcinoma (LUAD) |
+| TCGA-AK-3447 | Kidney renal clear cell carcinoma (KIRC) |
+| TCGA-DS-A0VK | Cervical cancer (CESC) |
+| TCGA-FU-A23K | Cervical cancer (CESC) |
+
+### Candidate DCB SNP panels
+
+Population-common biallelic SNPs within DCB exons were identified using dbSNP138/1000 Genomes allele frequencies. Four nested SNP panels were generated at different population minor allele frequency (MAF) thresholds:
+
+| Population MAF threshold | Candidate DCB SNPs |
+|---|---:|
+| ≥5% | 198 |
+| ≥10% | 141 |
+| ≥15% | 110 |
+| ≥20% | 86 |
+
+Lower MAF thresholds provide more candidate SNPs, whereas higher MAF thresholds enrich for SNPs that are more likely to be heterozygous in an individual.
+
+### Initial RNA coverage assessment
+
+The initial analysis used the raw depth (`RNA_DP`) reported by `samtools mpileup`. Using `RNA_DP ≥10`, the following apparent RNA coverage was observed:
+
+| TCGA case | MAF ≥5% | MAF ≥10% | MAF ≥15% | MAF ≥20% |
+|---|---:|---:|---:|---:|
+| TCGA-05-4398 | 109 / 198 (55.1%) | 75 / 141 (53.2%) | 56 / 110 (50.9%) | 37 / 86 (43.0%) |
+| TCGA-AK-3447 | 46 / 198 (23.2%) | 30 / 141 (21.3%) | 22 / 110 (20.0%) | 18 / 86 (20.9%) |
+| TCGA-DS-A0VK | 42 / 198 (21.2%) | 31 / 141 (22.0%) | 23 / 110 (20.9%) | 11 / 86 (12.8%) |
+| TCGA-FU-A23K | 48 / 198 (24.2%) | 36 / 141 (25.5%) | 29 / 110 (26.4%) | 17 / 86 (19.8%) |
+
+For the MAF ≥5% panel, there are 198 possible SNPs per sample and therefore:
+
+    198 SNPs × 4 samples = 792 possible SNP × sample observations
+
+Of these 792 possibilities, 411 had `RNA_DP > 0`:
+
+    TCGA-05-4398     161
+    TCGA-AK-3447      61
+    TCGA-DS-A0VK      82
+    TCGA-FU-A23K     107
+                     ---
+    Total            411
+
+Among these 411 observations, 245 had raw `RNA_DP ≥10`:
+
+    TCGA-05-4398     109
+    TCGA-AK-3447      46
+    TCGA-DS-A0VK      42
+    TCGA-FU-A23K      48
+                     ---
+    Total            245
+
+### Important correction: raw RNA_DP includes splice skips
+
+Inspection of the mpileup data revealed that raw `RNA_DP` is not equivalent to the number of actual RNA nucleotides covering a SNP.
+
+RNA-seq reads frequently contain CIGAR `N` operations representing spliced regions. `samtools mpileup` represents these reference skips as `<` or `>` characters. These reads can contribute to the reported pileup depth even though they do not provide an A, C, G, or T nucleotide at the SNP position.
+
+For example, an AGR2 SNP showed:
+
+    chr7:16802114 G>A
+
+    RNA_DP       = 2697
+    REF_COUNT    = 0
+    ALT_COUNT    = 0
+    REF_ALT_DP   = 0
+
+Thus, thousands of RNA alignments were associated with the genomic coordinate, but they predominantly represented reads splicing across the position rather than actual nucleotide observations at the SNP. The value 2697 represents the number of pileup observations/read skips, not the length of the intron.
+
+This can occur because a position may be annotated as exonic in one transcript isoform while being spliced out in the transcript isoforms predominantly expressed in a particular sample.
+
+For allelic analysis, the appropriate callable RNA depth is therefore:
+
+    REF_ALT_DP = REF_COUNT + ALT_COUNT
+
+rather than raw `RNA_DP`.
+
+### Corrected allele-callable RNA coverage
+
+After counting only actual REF and ALT nucleotides, the number of MAF ≥5% SNP/sample observations with `REF_ALT_DP ≥10` decreased substantially:
+
+| TCGA case | Raw RNA_DP ≥10 | Actual REF+ALT DP ≥10 |
+|---|---:|---:|
+| TCGA-05-4398 | 109 | 70 |
+| TCGA-AK-3447 | 46 | 0 |
+| TCGA-DS-A0VK | 42 | 15 |
+| TCGA-FU-A23K | 48 | 15 |
+| **Total** | **245** | **100** |
+
+Therefore, only 100 of the original 792 possible MAF ≥5% SNP/sample observations had at least 10 actual REF/ALT RNA bases suitable for reliable allele-fraction calculation.
+
+For these sites, RNA minor allele fraction is calculated as:
+
+    RNA minor AF =
+        min(REF_COUNT, ALT_COUNT)
+        -------------------------
+        REF_COUNT + ALT_COUNT
+
+Sites with no actual REF/ALT observations cannot have an RNA minor allele fraction calculated, regardless of how large their raw `RNA_DP` value is.
+
+### Matched-normal DNA further identifies informative SNPs
+
+RNA allelic skew alone does not establish true allelic imbalance because the individual must first be heterozygous at the SNP.
+
+Matched-normal WXS GATK heterozygous calls were therefore intersected with the RNA-callable DCB SNPs. Of the 100 MAF ≥5% SNP/sample observations with `REF_ALT_DP ≥10`, only 8 were confirmed as heterozygous in matched-normal DNA and had sufficient RNA coverage for DNA-versus-RNA AI analysis:
+
+    792 possible DCB SNP/sample combinations
+                  ↓
+    411 with raw RNA_DP > 0
+                  ↓
+    245 with raw RNA_DP ≥10
+                  ↓
+    100 with actual REF+ALT_DP ≥10
+                  ↓
+      8 matched-normal DNA HET + RNA DP≥10
+                  ↓
+       DNA-versus-RNA AI testing
+
+The eight evaluable sites consisted of seven SNPs in TCGA-05-4398 and one SNP in TCGA-FU-A23K. No SNPs in TCGA-AK-3447 or TCGA-DS-A0VK simultaneously satisfied the matched-normal heterozygosity and RNA `REF_ALT_DP ≥10` requirements.
+
+### DNA-versus-RNA allelic imbalance
+
+For each evaluable heterozygous site, the RNA allele fraction was compared with the allele fraction measured in matched-normal DNA. This is more informative than simply asking whether RNA differs from 50:50 because normal DNA itself can exhibit sampling or technical allelic skew.
+
+The strongest observed shifts were:
+
+| Case | Gene | SNP | Normal DNA ALT AF | RNA ALT AF | RNA−DNA shift | Fisher P | Fisher Q |
+|---|---|---|---:|---:|---:|---:|---:|
+| TCGA-05-4398 | ROS1 | rs2243378 | 0.338 | 0.558 | +0.220 | 0.0187 | 0.131 |
+| TCGA-05-4398 | ROS1 | rs2778 | 0.545 | 0.726 | +0.180 | 0.294 | 0.345 |
+| TCGA-05-4398 | ROS1 | rs2243380 | 0.431 | 0.575 | +0.145 | 0.0976 | 0.324 |
+| TCGA-FU-A23K | AGR2 | rs8071 | 0.500 | 0.624 | +0.124 | 0.384 | 0.384 |
+
+None of the individual SNPs reached FDR-adjusted `Q <0.05` in this small pilot dataset. However, ROS1 is particularly interesting because three independent heterozygous ROS1 SNPs in TCGA-05-4398 all shifted toward the ALT allele in tumor RNA.
+
+This coherent directional pattern warrants further investigation at the gene/haplotype level rather than considering each SNP solely as an independent AI event.
+
+### Interpretation
+
+The pilot analysis demonstrates that several distinct filtering steps must be separated when evaluating RNA allelic imbalance:
+
+1. **Population SNP availability** identifies common SNPs that could potentially be informative.
+2. **Raw RNA pileup coverage** indicates that RNA alignments interact with the genomic position but can be heavily inflated by splice/reference skips.
+3. **REF+ALT nucleotide depth** establishes that actual RNA bases were observed at the SNP and allows RNA allele fractions to be calculated.
+4. **Matched-normal DNA heterozygosity** establishes that both alleles are genuinely present in the individual's genome.
+5. **DNA-versus-RNA allele-fraction change** tests whether RNA expression preferentially represents one allele relative to the individual's DNA baseline.
+
+Consequently, the original raw-coverage table should not be interpreted as showing the number of allele-callable SNPs. The biologically relevant progression for the MAF ≥5% panel is:
+
+    792 candidate SNP/sample combinations
+        → 411 raw pileup-covered
+        → 245 raw DP≥10
+        → 100 actual REF+ALT DP≥10
+        → 8 DNA-HET + RNA-evaluable
+        → candidate AI events
+
+For subsequent AI analyses, `REF_ALT_DP` rather than raw `RNA_DP` should therefore be used as the RNA coverage criterion. RNA minor allele fraction remains useful for initial RNA-only screening, while matched-normal DNA provides the necessary baseline for determining whether an observed RNA allelic skew represents a genuine DNA-to-RNA allelic shift.

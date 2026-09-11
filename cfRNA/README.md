@@ -1125,7 +1125,31 @@ These results indicate that lowering the population MAF threshold substantially 
 
 ## DCB RNA SNP Coverage and Allelic-Imbalance Screening
 
-We screened common SNPs located within the 19 dark-channel biomarker (DCB) genes to determine which loci are observable in tumor RNA and potentially informative for allelic-imbalance (AI) analysis. Four TCGA tumor RNA-seq samples were used for this pilot analysis:
+We screened common SNPs located within the 19 dark-channel biomarker (DCB) genes to determine which loci are observable in tumor RNA and potentially informative for allelic-imbalance (AI) analysis. 
+
+| GENE    | CANCER_TYPE  |
+|---------|--------------|
+| AGR2    | Lung         |
+| BPIFA1  | Lung         |
+| CASP14  | Breast       |
+| CSN1S1  | Breast       |
+| CXCL17  | Lung         |
+| FABP7   | Breast       |
+| GABRG1  | Lung         |
+| GNAT3   | Lung         |
+| KLK5    | Breast       |
+| LALBA   | Breast       |
+| MUC5B   | Lung         |
+| OPN1SW  | Breast       |
+| ROS1    | Lung         |
+| SCGB2A2 | Breast       |
+| SFTPA2  | Lung         |
+| SFTA3   | Lung         |
+| SLC34A2 | Lung         |
+| SMIM22  | Lung         |
+| WFDC2   | Lung, Breast |
+
+Four TCGA tumor RNA-seq samples were used for this pilot analysis:
 
 | TCGA case | Cancer type |
 |---|---|
@@ -1147,16 +1171,6 @@ Population-common biallelic SNPs within DCB exons were identified using dbSNP138
 
 Lower MAF thresholds provide more candidate SNPs, whereas higher MAF thresholds enrich for SNPs that are more likely to be heterozygous in an individual.
 
-### Initial RNA coverage assessment
-
-The initial analysis used the raw depth (`RNA_DP`) reported by `samtools mpileup`. Using `RNA_DP ≥10`, the following apparent RNA coverage was observed:
-
-| TCGA case | MAF ≥5% | MAF ≥10% | MAF ≥15% | MAF ≥20% |
-|---|---:|---:|---:|---:|
-| TCGA-05-4398 | 109 / 198 (55.1%) | 75 / 141 (53.2%) | 56 / 110 (50.9%) | 37 / 86 (43.0%) |
-| TCGA-AK-3447 | 46 / 198 (23.2%) | 30 / 141 (21.3%) | 22 / 110 (20.0%) | 18 / 86 (20.9%) |
-| TCGA-DS-A0VK | 42 / 198 (21.2%) | 31 / 141 (22.0%) | 23 / 110 (20.9%) | 11 / 86 (12.8%) |
-| TCGA-FU-A23K | 48 / 198 (24.2%) | 36 / 141 (25.5%) | 29 / 110 (26.4%) | 17 / 86 (19.8%) |
 
 For the MAF ≥5% panel, there are 198 possible SNPs per sample and therefore:
 

@@ -14,11 +14,12 @@ This cBioPortal [clinical table](https://www.cbioportal.org/study/clinicalData?i
 | Intermediate | 0.1504–0.3305 | 166 |
 | High | >0.3305 | 167 |
 
+
 ## Selected samples
 
 | FGA group | TCGA sample ID | TCGA case ID | FGA |
 | --- | --- | --- | ---: |
-| Low | TCGA-86-A4P8-01 | TCGA-86-A4P8 | 0.0001 |
+| Low | TCGA-44-3398-01 | TCGA-44-3398 | 0.0012 |
 | Low | TCGA-86-7714-01 | TCGA-86-7714 | 0.0639 |
 | Low | TCGA-05-4430-01 | TCGA-05-4430 | 0.0992 |
 | Intermediate | TCGA-67-4679-01 | TCGA-67-4679 | 0.1694 |

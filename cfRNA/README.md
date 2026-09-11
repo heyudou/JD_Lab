@@ -1026,24 +1026,18 @@ Starting from the whole-genome dbSNP138 VCF:
 The final population panel therefore contains **205,511 common, exonic, biallelic SNPs** with MAF ≥ 0.20.
 
 **Generating Biallelic SNVs**
-58,373,860 autosomal dbSNP records
-        │
-        ├── Remove multiallelic sites
-        │     e.g. REF=A ALT=G,T
-        │
-        ├── Remove insertions
-        │     e.g. REF=A ALT=AT
-        │
-        ├── Remove deletions
-        │     e.g. REF=AT ALT=A
-        │
-        ├── Remove MNVs / other non-SNV variants
-        │     e.g. REF=AC ALT=GT
-        │
-        └── Remove non-standard alleles
-              e.g. N or symbolic alleles
-        ↓
-51,049,361 biallelic SNVs
+
+Starting with 58,373,860 autosomal dbSNP records (chr1–22), variants were restricted to biallelic single-nucleotide variants (SNVs). Records were excluded if they were:
+
+Multiallelic: more than one alternative allele (e.g., REF=A, ALT=G,T)
+Insertions: ALT contains additional bases (e.g., REF=A, ALT=AT)
+Deletions: REF contains additional bases (e.g., REF=AT, ALT=A)
+MNVs or other non-SNV variants: both alleles span multiple bases (e.g., REF=AC, ALT=GT)
+Non-standard alleles: REF or ALT contains bases other than A, C, G, or T
+
+After filtering, 51,049,361 biallelic SNVs remained.
+
+
 
 
 ### Chromosomal distribution of candidate SNPs

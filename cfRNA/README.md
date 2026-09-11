@@ -1018,7 +1018,10 @@ Starting from the whole-genome dbSNP138 VCF:
 | Sites with 1000 Genomes CAF | 36,545,720 |
 | MAF ≥ 0.20 | 3,274,054 |
 | Unique MAF ≥ 0.20 SNP positions | 3,274,045 |
-| Within GENCODE v50 exons | **205,511** |
+| Within GENCODE v50 exons MAF ≥ 0.20 SNP positions| **205,511** |
+| Within GENCODE v50 exons ≥ 0.15 SNP positions| **255,051** |
+| Within GENCODE v50 exons ≥ 0.10 SNP positions| **318,004** |
+| Within GENCODE v50 exons ≥ 0.05 SNP positions| **418,124** |
 
 The final population panel therefore contains **205,511 common, exonic, biallelic SNPs** with MAF ≥ 0.20.
 

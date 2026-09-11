@@ -4,36 +4,35 @@
 
 Test whether allelic imbalance (AI) can be detected from cfRNA by first validating the approach in TCGA lung adenocarcinoma (LUAD) samples spanning different levels of copy-number alteration.
 
-## Initial cohort selection
+## Cohort selection
 
-Select [**9 TCGA-LUAD samples**](https://www.cbioportal.org/study/clinicalData?id=luad_tcga_pan_can_atlas_2018) using fraction of genome altered (FGA) values from the cBioPortal sample table:
+This cBioPortal [clinical table]((https://www.cbioportal.org/study/clinicalData?id=luad_tcga_pan_can_atlas_2018) contained **500 primary-tumor samples with nonmissing FGA values**. Samples were divided into FGA tertiles and three were randomly selected from each tertile using random seed `20260911`.
 
-| FGA group | Selection | Samples |
-| --- | --- | ---: |
-| Low | Randomly select 3 samples from the lowest FGA third | 3 |
-| Intermediate | Randomly select 3 samples from the middle FGA third | 3 |
-| High | Randomly select 3 samples from the highest FGA third | 3 |
+| FGA group | FGA range | Eligible samples |
+| --- | ---: | ---: |
+| Low | ≤0.1503 | 167 |
+| Intermediate | 0.1504–0.3305 | 166 |
+| High | >0.3305 | 167 |
 
-Within each FGA group, samples will be selected randomly using a recorded random seed so that the selection is reproducible. Only samples with the required matched data for AI analysis will be eligible.
+## Selected samples
+
+| FGA group | TCGA sample ID | TCGA case ID | FGA |
+| --- | --- | --- | ---: |
+| Low | TCGA-86-A4P8-01 | TCGA-86-A4P8 | 0.0001 |
+| Low | TCGA-86-7714-01 | TCGA-86-7714 | 0.0639 |
+| Low | TCGA-05-4430-01 | TCGA-05-4430 | 0.0992 |
+| Intermediate | TCGA-67-4679-01 | TCGA-67-4679 | 0.1694 |
+| Intermediate | TCGA-55-7283-01 | TCGA-55-7283 | 0.2525 |
+| Intermediate | TCGA-93-8067-01 | TCGA-93-8067 | 0.3251 |
+| High | TCGA-62-A471-01 | TCGA-62-A471 | 0.4409 |
+| High | TCGA-69-7973-01 | TCGA-69-7973 | 0.4716 |
+| High | TCGA-L4-A4E5-01 | TCGA-L4-A4E5 | 0.5246 |
+
+All nine samples are labeled `Primary` with `Matched` somatic status in cBioPortal. Availability of tumor WXS, matched-normal WXS, and tumor RNA-seq BAM files must be confirmed in GDC before the cohort is finalized.
 
 ## Immediate next steps
 
-1. Export the TCGA-LUAD sample table and FGA values from cBioPortal.
-2. Confirm availability of the required DNA and RNA-seq data.
-3. Divide eligible samples into FGA tertiles.
-4. Randomly select three samples per tertile and record the seed and selected sample IDs.
-5. Run the AI-detection workflow and compare results across the low-, intermediate-, and high-FGA groups.
-
-## Cohort record
-
-| FGA group | TCGA case/sample ID | FGA | DNA available | RNA available | Included |
-| --- | --- | ---: | --- | --- | --- |
-| Low | TBD | TBD | TBD | TBD | TBD |
-| Low | TBD | TBD | TBD | TBD | TBD |
-| Low | TBD | TBD | TBD | TBD | TBD |
-| Intermediate | TBD | TBD | TBD | TBD | TBD |
-| Intermediate | TBD | TBD | TBD | TBD | TBD |
-| Intermediate | TBD | TBD | TBD | TBD | TBD |
-| High | TBD | TBD | TBD | TBD | TBD |
-| High | TBD | TBD | TBD | TBD | TBD |
-| High | TBD | TBD | TBD | TBD | TBD |
+1. Confirm tumor WXS, matched-normal WXS, and tumor RNA-seq BAM availability in GDC.
+2. Replace any sample missing a required data type with another reproducibly selected sample from the same FGA tertile.
+3. Run the AI-detection workflow.
+4. Compare detected AI across the low-, intermediate-, and high-FGA groups.

@@ -6,7 +6,7 @@ Test whether allelic imbalance (AI) can be detected from cfRNA by first validati
 
 ## Cohort selection
 
-This cBioPortal [clinical table]((https://www.cbioportal.org/study/clinicalData?id=luad_tcga_pan_can_atlas_2018) contained **500 primary-tumor samples with nonmissing FGA values**. Samples were divided into FGA tertiles and three were randomly selected from each tertile using random seed `20260911`.
+This cBioPortal [clinical table](https://www.cbioportal.org/study/clinicalData?id=luad_tcga_pan_can_atlas_2018) contained **500 primary-tumor samples with nonmissing FGA values**. Samples were divided into FGA tertiles and three were randomly selected from each tertile using random seed `20260911`.
 
 | FGA group | FGA range | Eligible samples |
 | --- | ---: | ---: |

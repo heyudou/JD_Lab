@@ -1090,3 +1090,34 @@ Mean upper AF:   0.7055
 
 [chr22_AI.pdf](https://github.com/user-attachments/files/31805576/chr22_AI.pdf)
 
+
+
+
+## DCB Allelic Imbalance Analysis in TCGA RNA-seq
+
+### Project Rationale
+
+This project tests whether **allelic imbalance (AI) at common transcribed SNPs within cancer-associated dark channel biomarker (DCB) genes** can provide an additional signal for cancer detection. The 19 lung/breast DCB genes identified by Larson et al. have very low expression in normal cfRNA but are detectable in cancer. We therefore test whether allele-specific expression within these cancer-associated transcripts can provide an orthogonal signal of tumor origin.
+
+Candidate SNP panels were generated from dbSNP138/1000 Genomes by selecting biallelic exonic SNPs at population MAF thresholds of **5%, 10%, 15%, and 20%**. The MAF threshold is used to enrich for SNPs likely to be heterozygous in an individual; population allele frequency is **not** treated as the expected RNA allelic ratio.
+
+### Initial RNA Coverage Assessment
+
+As a first test, the four TCGA RNA-seq samples previously analyzed for allelic imbalance were examined for coverage at the DCB SNPs. Because the higher-MAF panels are subsets of the MAF5 panel, `samtools mpileup` was performed once across the **198 MAF≥5% candidate SNPs**, and the results were subsequently filtered to the MAF10, MAF15, and MAF20 panels.
+
+RNA coverage was sufficient to support further allele-specific analysis. At **MAF≥5% and RNA depth ≥10**, the four samples contained **109, 46, 42, and 48 covered candidate SNPs**, respectively. In comparison, restricting to MAF≥20% reduced these numbers to **37, 18, 11, and 17**.
+
+These results indicate that lowering the population MAF threshold substantially increases the number of potentially informative DCB loci while retaining adequate RNA coverage. The next step is to quantify **REF and ALT read counts** at these covered sites and identify candidate allelic imbalance, followed by comparison with matched DNA genotypes to distinguish true heterozygous loci from homozygous sites.
+
+
+### DCB SNP Coverage by MAF Threshold
+
+| TCGA Case | MAF ≥5% | MAF ≥10% | MAF ≥15% | MAF ≥20% |
+|---|---:|---:|---:|---:|
+| **TCGA-05-4398** | 109 / 198 (55.1%) | 75 / 141 (53.2%) | 56 / 110 (50.9%) | 37 / 86 (43.0%) |
+| **TCGA-AK-3447** | 46 / 198 (23.2%) | 30 / 141 (21.3%) | 22 / 110 (20.0%) | 18 / 86 (20.9%) |
+| **TCGA-DS-A0VK** | 42 / 198 (21.2%) | 31 / 141 (22.0%) | 23 / 110 (20.9%) | 11 / 86 (12.8%) |
+| **TCGA-FU-A23K** | 48 / 198 (24.2%) | 36 / 141 (25.5%) | 29 / 110 (26.4%) | 17 / 86 (19.8%) |
+
+**Table:** Number of candidate DCB SNPs with **RNA depth ≥10**. Values are shown as `covered SNPs / total candidate SNPs (% of panel)`. Lowering the population MAF threshold substantially increases the absolute number of DCB SNPs available for allele-specific analysis. Even at MAF ≥5%, all four samples retain dozens of well-covered loci, with TCGA-05-4398 containing 109 sites at DP ≥10.
+
